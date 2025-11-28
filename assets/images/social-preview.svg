@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#0ea5a4"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <g transform="translate(80,100)">
+    <rect x="0" y="0" width="1040" height="430" rx="20" fill="rgba(255,255,255,0.06)"/>
+    <text x="40" y="150" font-family="Poppins, Arial, Helvetica, sans-serif" font-size="64" fill="#ffffff" font-weight="700">Khalil Hamidani</text>
+    <text x="40" y="220" font-family="Poppins, Arial, Helvetica, sans-serif" font-size="36" fill="#e6e6e6">Full‑stack Web Developer — Django · Flask · JavaScript</text>
+    <text x="40" y="320" font-family="Poppins, Arial, Helvetica, sans-serif" font-size="24" fill="#cfcfe3">khalilhamidani.engineer</text>
+  </g>
+</svg>
