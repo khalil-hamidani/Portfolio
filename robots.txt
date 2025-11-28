@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://khalilhamidani.engineer/sitemap.xml
+Host: khalilhamidani.engineer
