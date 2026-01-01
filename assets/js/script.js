@@ -51,13 +51,51 @@ select.addEventListener("click", function () { elementToggleFunc(this); });
 
 for (let i = 0; i < selectItems.length; i++) {
   selectItems[i].addEventListener("click", function () {
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
+    let selectedValue = this.dataset.category;
+    selectValue.innerText = this.childNodes[0].textContent.trim();
     elementToggleFunc(select);
     filterFunc(selectedValue);
   });
 }
 const filterItems = document.querySelectorAll("[data-filter-item]");
+
+// Count items and update UI
+const countItems = () => {
+  const counts = {
+    "all": filterItems.length,
+    "web development": 0,
+    "mobile development": 0,
+    "scripts and softwares": 0
+  };
+
+  filterItems.forEach(item => {
+    const category = item.dataset.category;
+    if (counts.hasOwnProperty(category)) {
+      counts[category]++;
+    }
+  });
+
+  const filterBtns = document.querySelectorAll("[data-filter-btn]");
+  filterBtns.forEach(btn => {
+    const category = btn.dataset.category;
+    const countSpan = btn.querySelector(".count");
+    if (countSpan && counts.hasOwnProperty(category)) {
+      countSpan.textContent = counts[category];
+    }
+  });
+
+  const selectItems = document.querySelectorAll("[data-select-item]");
+  selectItems.forEach(btn => {
+    const category = btn.dataset.category;
+    const countSpan = btn.querySelector(".count");
+    if (countSpan && counts.hasOwnProperty(category)) {
+      countSpan.textContent = counts[category];
+    }
+  });
+};
+
+countItems();
+
 const filterFunc = function (selectedValue) {
   for (let i = 0; i < filterItems.length; i++) {
     if (selectedValue === "all") {
@@ -72,8 +110,8 @@ const filterFunc = function (selectedValue) {
 let lastClickedBtn = filterBtn[0];
 for (let i = 0; i < filterBtn.length; i++) {
   filterBtn[i].addEventListener("click", function () {
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
+    let selectedValue = this.dataset.category;
+    selectValue.innerText = this.childNodes[0].textContent.trim();
     filterFunc(selectedValue);
     lastClickedBtn.classList.remove("active");
     this.classList.add("active");

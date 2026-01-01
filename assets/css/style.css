@@ -805,7 +805,18 @@ main {
     text-transform: capitalize;
     width: 100%;
     padding: 8px 10px;
-    border-radius: 8px
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-item button .count {
+    background: var(--onyx);
+    color: var(--light-gray);
+    font-size: var(--fs-8);
+    padding: 2px 8px;
+    border-radius: 8px;
 }
 
 .select-item button:hover {
@@ -1344,7 +1355,10 @@ main {
     .filter-item button {
         color: var(--light-gray);
         font-size: var(--fs-5);
-        transition: var(--transition-1)
+        transition: var(--transition-1);
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
 
     .filter-item button:hover {
@@ -1353,6 +1367,20 @@ main {
 
     .filter-item button.active {
         color: var(--orange-yellow-crayola)
+    }
+
+    .filter-item button .count {
+        background: var(--onyx);
+        color: var(--light-gray);
+        font-size: var(--fs-8);
+        padding: 4px 10px;
+        border-radius: 20px;
+        transition: var(--transition-1);
+    }
+
+    .filter-item button.active .count {
+        background: var(--orange-yellow-crayola);
+        color: var(--eerie-black-2);
     }
 
     .form-btn {
